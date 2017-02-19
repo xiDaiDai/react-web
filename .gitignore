@@ -1,0 +1,60 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @xiDaiDai
+ Sign out
+ Unwatch 2
+  Unstar 20
+  Fork 4 xiDaiDai/JanDan_ReactNative
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Pulse  Graphs  Settings
+Branch: master Find file Copy pathJanDan_ReactNative/.gitignore
+ce0ce66  on 17 May 2016
+@xishiwei xishiwei init
+1 contributor
+RawBlameHistory     
+41 lines (36 sloc)  418 Bytes
+# OSX
+#
+.DS_Store
+
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace
+
+# Android/IJ
+#
+.idea
+.gradle
+local.properties
+
+# node.js
+#
+node_modules/
+npm-debug.log
+
+# BUCK
+buck-out/
+\.buckd/
+android/app/libs
+android/keystores/debug.keystore
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
