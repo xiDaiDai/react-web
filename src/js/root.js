@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from 'antd';
-import 'antd/dist/antd.css';
+import PCIndex from './components/pc_index';
+ 
+
+export default class Root extends React.Component {
+	render() {
+		return (
+			<div>
+				<PCIndex></PCIndex>
+			</div>
+		);
+	};
+}
 
 ReactDOM.render(
-	<div>
-    <Button type="primary">Primary</Button>
-    <Button>Default</Button>
-    <Button type="dashed">Dashed</Button>
-    <Button type="danger">Danger</Button>
-  </div>,
-	document.getElementById('mainContainer')
-);
+	<Root/>, document.getElementById('mainContainer'));
