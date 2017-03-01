@@ -25,7 +25,7 @@ export default class PCHeader extends React.Component {
 					</Col>
 					<Col span={16}>
 						<Menu 
-							selectedKeys={this.state.currentTab}
+							selectedKeys={[this.state.currentTab]}
 							mode="horizontal">
 							<Menu.Item key="top">
 								<Icon type="appstore"/>头条
