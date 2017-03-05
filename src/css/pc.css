@@ -21,4 +21,23 @@
 	float: right !important;
 }
 
- 
+.container{
+	padding-top: 10px;
+}
+
+.leftContainer{
+	overflow: auto;
+	width:410px;
+	float: left;
+	zoom:1;
+ }
+
+ .carousel_img{
+ 	height: 200px;
+ 	width:400px;
+ }
+
+.carousel{
+ 	height: 210px;
+	width:410px;
+ }
