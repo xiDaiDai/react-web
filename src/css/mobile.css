@@ -29,3 +29,21 @@ html{
 	margin-right: 0.3rem;
 	margin-top: 0.3rem;
 }
+
+.m_artile_info{
+	vertical-align: top;
+	width: 300px;
+	display: inline-block;
+}
+
+.m_artile_info .m_title{
+ 	background: #0f0;
+}
+
+.m_image_info{
+ 	display: inline-block;
+ 	vertical-align: bottom;
+}
+
+
+
