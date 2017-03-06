@@ -27,7 +27,7 @@
 
 .leftContainer{
 	overflow: auto;
-	width:410px;
+	width:400px;
 	float: left;
 	zoom:1;
  }
@@ -38,6 +38,25 @@
  }
 
 .carousel{
- 	height: 210px;
-	width:410px;
+ 	height: 200px;
+	width:400px;
  }
+
+ .topNewsList{
+ 	float: left;
+ 	padding-top: 10px;
+ }
+
+ .imageblock {
+   float: left;
+   padding-left: 25px;
+   padding-top: 25px;
+}
+
+.tabs_news{
+	padding-left:10px;
+}
+
+.custome-card{
+	text-align: center;
+}
