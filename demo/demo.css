@@ -1,0 +1,171 @@
+div.menu ul
+{
+    list-style:none; /* 去掉ul前面的符号 */
+    margin: 0px; /* 与外界元素的距离为0 */
+    padding: 0px; /* 与内部元素的距离为0 */
+    width: auto; /* 宽度根据元素内容调整 */
+    align-items:center;
+    display:-webkit-flex;
+
+}
+
+div.menu ul li
+{
+    float:left; /* 向左漂移，将竖排变为横排 */
+    color: #f00;
+    font-size: 15px;
+}
+
+div.menu ul li.spacer
+{
+  width: 1px;
+  height: 10px;
+  margin-left: 15px;
+  margin-right:15px;
+  background-color: gray;
+
+}
+
+div.test_inline{
+}
+
+div.test_inline div.inner_block{
+  height: 100px;
+  width: 100px;
+  background-color: orange;
+  display: inline;
+}
+
+
+div.float_1{
+  height: 200px;
+  width: 100px;
+  background-color: orange;
+  float: left;
+}
+
+div.float_2{
+  height: 100px;
+  width: 200px;
+  background-color: gray;
+  clear: left;
+  text-align:center;
+}
+
+div.absolute{
+  border: 10px solid green;
+  left:0;
+  right:0;
+  padding: 20px;
+  position:absolute;
+}
+
+div.footer{
+  border: 10px solid green;
+  padding: 20px;
+  width: 500px;
+  margin: 0;
+  position:fixed;
+  bottom: 0;
+  right: 0;
+}
+
+div.outer-center{
+  width: 100%;
+  background-color: red;
+  text-align: center;
+}
+
+div.inner-center{
+  display: inline-block;
+  width: 200px;
+  background-color: orange;
+}
+
+div.vertical-center{
+  height: 200px;
+  width: 100px;
+  line-height: 200px;
+  text-align: center;
+  background-color:orange;
+}
+
+div.outer-vertical-center{
+  height: 100px;
+  background-color: gray;
+  position: relative;
+  text-align: center;
+}
+
+div.outer-vertical-center div{
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  position:absolute;
+  background-color:orange;
+  top:50%;
+  left:50%;
+  margin-top: -25px;
+  margin-left: -100px;
+  line-height: 50px;
+
+}
+
+div.outer-vertical-center-2{
+  height: 100px;
+  background-color: orange;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.leftImage{
+  width:100px;
+  height: 100px;
+  background: orange;
+}
+.leftImageContainer{
+  float: left;
+}
+
+.item-li{
+  list-style-type:none;
+  clear: left;
+
+}
+
+.container{
+  border:1px solid red;
+  height: 100px;
+  width: 500px;
+}
+
+.rightContainer{
+  height:100%;
+}
+
+.right_info{
+  height: 50%;
+  position: relative;
+}
+
+.right_title{
+  box-sizing: border-box;
+  height: 50%;
+  padding-top: 5px;
+  padding-left: 110px;
+}
+
+.span_author{
+  position: absolute;
+  bottom: 5px;
+  left:110px;
+}
+
+.span_time{
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+
