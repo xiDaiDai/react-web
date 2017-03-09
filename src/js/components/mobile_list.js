@@ -15,7 +15,7 @@ export default class MobileList extends React.Component {
   		method:'GET'
   	};
   	fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type="
-  	+ this.props.type 
+  	+ this.props.type
   	+ "&count="+ this.props.count, myFetchOptions)
   	.then(response => response.json())
   	.then(json => this.setState({news: json}));
@@ -27,22 +27,20 @@ export default class MobileList extends React.Component {
 		const newList = news.length
 		? news.map((item,index)=>{
 			return(
-				<div key={index}>
+				<div class='item-li' key={index}>
 					<Link to={'detail/${item.uniquekey}'} target="_blank">
-						<div>
-							<div class='m_image_info'>
-								<img alt='' style={{width:'100px',height:'100px'}} src={item.thumbnail_pic_s}/>
-							</div>
-							<div class='m_artile_info'>
-								<div class='m_title'>
-									<span>{item.title}</span>
-								</div>
-								<div>
-									<span>{item.realtype}</span>
-									<span>{item.date}</span>
-								</div>
-							</div>
-						</div>
+            <div class="item_container">
+              <div class="leftImageContainer">
+                <img class="leftImage" alt='image' src={item.thumbnail_pic_s}/>
+              </div>
+              <div class="rightContainer">
+                <div class="right_title">{item.title}</div>
+                <div class="right_info">
+                  <span class="span_author">{item.realtype}</span>
+                  <span class="span_time">{item.date}</span>
+                </div>
+              </div>
+             </div>
 					</Link>
 				</div>
 			)
