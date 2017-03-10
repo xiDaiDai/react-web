@@ -12,13 +12,13 @@ export default class MobileList extends React.Component {
 
   componentWillMount(){
   	let myFetchOptions = {
-  		method:'GET'
-  	};
-  	fetch("https://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type="
-  	+ this.props.type
-  	+ "&count="+ this.props.count, myFetchOptions)
-  	.then(response => response.json())
-  	.then(json => this.setState({news: json}));
+      method:'GET'
+    };
+    fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type="
+    + this.props.type
+    + "&count="+ this.props.count, myFetchOptions)
+    .then(response => response.json())
+    .then(json => this.setState({news: json}));
   }
 
 
@@ -36,7 +36,7 @@ export default class MobileList extends React.Component {
               <div class="rightContainer">
                 <div class="right_title">{item.title}</div>
                 <div class="right_info">
-                  <span class="span_author">{item.realtype}</span>
+                  <span class="span_author">{item.author_name}</span>
                   <span class="span_time">{item.date}</span>
                 </div>
               </div>
