@@ -28,7 +28,7 @@ export default class MobileList extends React.Component {
 		? news.map((item,index)=>{
 			return(
 				<div class='item-li' key={index}>
-					<Link to={'detail/${item.uniquekey}'} target="_blank">
+					<Link to={`detail/${item.uniquekey}`} target="_blank">
             <div class="item_container">
               <div class="leftImageContainer">
                 <img class="leftImage" alt='image' src={item.thumbnail_pic_s}/>
