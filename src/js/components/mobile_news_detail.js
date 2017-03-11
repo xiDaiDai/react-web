@@ -1,5 +1,7 @@
 import React from 'react';
 import {BackTop} from 'antd';
+import MobileHeader from './mobile_header';
+import MobileFooter from './mobile_footer';
 export default class MobileNewsDetails extends React.Component {
   constructor() {
     super();
@@ -22,7 +24,9 @@ export default class MobileNewsDetails extends React.Component {
   render() {
     return (
       <div>
+        <MobileHeader />
         <div class="articleContainer" dangerouslySetInnerHTML={this.createMarkup()}></div>
+        <MobileFooter />
       </div>
     );
   };
