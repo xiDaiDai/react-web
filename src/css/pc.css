@@ -54,7 +54,23 @@
 }
 
 .tabs_news{
+  float: left;
 	padding-left:10px;
+  width: 417px;
+}
+
+.tabs_product {
+    width: 300px;
+    padding-left: 10px;
+    float: left;
+}
+
+.tabs_news li {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 350px;
+    float: left;
+    text-overflow: ellipsis;
 }
 
 .custome-card{
