@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card,Tabs,Row,Col} from 'antd';
+import {Card,Tabs,Row,Col,Upload,Modal,Icon} from 'antd';
 import {Router, Route, Link, browserHistory} from 'react-router';
 import MobileHeader from './mobile_header';
 import MobileFooter from './mobile_footer';
@@ -10,8 +10,23 @@ export default class MobileUserCenter extends React.Component {
     this.state={
     	usercollection:'',
     	usercomments:'',
+    	previewVisible: false,
+    	previewImage: '',
+    	fileList: [],
     }
   }
+
+
+  handleCancel(){this.setState({ previewVisible: false })};
+
+  handlePreview(file){
+    this.setState({
+      previewImage: file.url || file.thumbUrl,
+      previewVisible: true,
+    });
+  }
+
+  handleChange({fileList}){this.setState({fileList})};
 
 
   componentDidMount() {
@@ -39,8 +54,8 @@ export default class MobileUserCenter extends React.Component {
 		const usercollectionList = usercollection.length
 		? usercollection.map((collection,index)=>{
 			return(
-				<Link to={`detail/${collection.uniquekey}`} target="_blank">
-					<Card key={index} style={{margin:'5px'}}>
+				<Link key={index} to={`detail/${collection.uniquekey}`} target="_blank">
+					<Card  style={{margin:'5px'}}>
 						<p>{collection.Title}</p>
 					</Card>
 				</Link>
@@ -51,8 +66,8 @@ export default class MobileUserCenter extends React.Component {
 		const usercommentsList = usercomments.length
 		? usercomments.map((comment,index)=>{
 			return(
-				<Link to={`detail/${comment.uniquekey}`} target="_blank">
-					<Card key={index} title={`于 ${comment.datetime} 评论了文章`} style={{margin:'5px'}}>
+				<Link key={index} to={`detail/${comment.uniquekey}`} target="_blank">
+					<Card  title={`于 ${comment.datetime} 评论了文章`} style={{margin:'5px'}}>
 						<p>{comment.Comments}</p>
 					</Card>
 				</Link>
@@ -73,7 +88,7 @@ export default class MobileUserCenter extends React.Component {
 						 		{usercommentsList}
 						 	</TabPane>
 						 	<TabPane tab="我的设置" key="3">
-						 	 
+						 	 	{this.renderUpload()}
 						 	</TabPane>
 						</Tabs>
 					</Col>
@@ -82,4 +97,33 @@ export default class MobileUserCenter extends React.Component {
 			</div>
 		);
 	};
+
+	renderUpload(){
+		const {previewVisible, previewImage, fileList} = this.state;
+		const uploadButton = (
+      <div>
+        <Icon type="plus" />
+        <div className="ant-upload-text">Upload</div>
+      </div>
+    );
+
+    //移动端调取相册，相机<input type="file" accept="image/*" capture="camera">
+
+		return(
+			<div className="clearfix">
+        <Upload
+          action="//jsonplaceholder.typicode.com/posts/"
+          listType="picture-card"
+          fileList={fileList}
+          onPreview={(file)=>this.handlePreview(file)}
+          onChange={(filelist)=>this.handleChange(filelist)}
+        >
+          {fileList.length >= 3 ? null : uploadButton}
+        </Upload>
+        <Modal visible={previewVisible} footer={null} onCancel={()=>this.handleCancel()}>
+          <img alt="example" style={{ width: '100%' }} src={previewImage} />
+        </Modal>
+      </div>
+		);
+	}
 }
